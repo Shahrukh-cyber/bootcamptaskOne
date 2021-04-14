@@ -18,8 +18,14 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           node-version: 12
-
+      - name: Installing yarn
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install 
+      - name: Building ReactApp
+        run: yarn build
+        
       - name: Instaling surge
         run: npm install --global surge
       - name: deploying using surge
-        run: surge ./ oval-wind.surge.sh --token ${{ secrets.SURGE_TOKEN }}    
+        run: surge ./build oval-wind.surge.sh --token ${{ secrets.SURGE_TOKEN }}    
