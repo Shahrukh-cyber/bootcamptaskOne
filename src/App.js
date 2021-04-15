@@ -5,6 +5,8 @@ const App = () => {
     <div>
       <h1>ReactApplication</h1>    
       <h3>ChildComponent</h3>
+      <h3>Second ChildComponent</h3>
+
 
     </div>
   )
